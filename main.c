@@ -3,11 +3,6 @@
 
 int main(){
 
-<<<<<<< HEAD
-printf("bora tomar uma?");
-=======
-
-
   struct Paciente {
     float peso;
     float altura;
@@ -16,8 +11,14 @@ printf("bora tomar uma?");
     int idade;
     char telefone[15];
     int id;
-    int prioridade;
   };
 
->>>>>>> cc14c31b7a29b6d026b77f907473c120f500de4d
+    int salas[100];
+
+struct Medico {
+    char nome[100];
+    char especialidade[100];
+    int id_unico;
+  };
+
 }
