@@ -1,11 +1,14 @@
 
   #include <stdio.h>
+  #include <string.h>
   
     struct HeapNode {
     int prioridade;
     int id_paciente;
     int id_medico;
     int id_sala;
+    int is_retorno;
+    int ja_faltou;
   };
   
     struct Entrada {
@@ -29,6 +32,7 @@
     char nome[100];
     char especialidade[10][50];
     int id;
+    int horas_trabalhadas;
   };
 
   void lerPacientes(struct Paciente pacientes[], int *num_pacientes, FILE *file) {
@@ -55,6 +59,7 @@
     }
     while (fgets(line, sizeof(line), file) && strncmp(line, "Entrada", 7) != 0) {
       sscanf(line, "%[^,],%[^,],%d", medicos[*num_medicos].nome, medicos[*num_medicos].especialidade[0], &medicos[*num_medicos].id);
+      medicos[*num_medicos].horas_trabalhadas = 0;
       (*num_medicos)++;
     }
   }
