@@ -1,7 +1,9 @@
 Paciente
 teste,10,10,10,(88)8293829,10
+teste,10,10,10,(88)8293829,10
 Medico
-
-
-
+jose,pediatra,10
 Entrada
+10,100,10,ortopedia,febre,medicacoes
+Especialidade
+ortopedia,pediatria,dermatologia
