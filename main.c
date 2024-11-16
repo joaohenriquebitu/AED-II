@@ -16,8 +16,6 @@
     char medicacoes[256];
   };
   
-
-
     struct Paciente {
     char nome[100];
     float peso;
@@ -98,11 +96,9 @@
     int num_pacientes, num_medicos, num_entradas;
     lerPacientes(pacientes, &num_pacientes, file);
     lerMedicos(medicos, &num_medicos, file);
-    lerEntradas(&entradas,&num_entradas, file);
+    lerEntradas(entradas,&num_entradas, file);
 
     fclose(file);
-
-
 
   char especialidades[100][50];
   int salas[100];
@@ -126,7 +122,5 @@
     printf("ID: %d\n", pacientes[i].id);
     printf("\n");
   }
-
-
 
 }
