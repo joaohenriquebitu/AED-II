@@ -1,0 +1,115 @@
+Dia: 1, Hora: 8
+ID: 0
+ID Entrada: 1
+Prioridade: 100
+ID Paciente: 2
+ID Médico: 10
+ID Sala: 1
+É retorno: 0
+
+Dia: 1, Hora: 8
+ID: 4
+ID Entrada: 5
+Prioridade: 200
+ID Paciente: 6
+ID Médico: 5
+ID Sala: 2
+É retorno: 0
+
+Dia: 1, Hora: 8
+ID: 5
+ID Entrada: 6
+Prioridade: 100
+ID Paciente: 7
+ID Médico: 3
+ID Sala: 3
+É retorno: 0
+
+Primeira falta de um paciente, substituindo vaga...
+
+Dia: 1, Hora: 9
+ID: 0
+ID Entrada: 1
+Prioridade: 101
+ID Paciente: 2
+ID Médico: 10
+ID Sala: 1
+É retorno: 1
+
+Dia: 1, Hora: 9
+ID: 2
+ID Entrada: 3
+Prioridade: 100
+ID Paciente: 4
+ID Médico: 5
+ID Sala: 2
+É retorno: 0
+
+Dia: 1, Hora: 9
+ID: 5
+ID Entrada: 6
+Prioridade: 100
+ID Paciente: 7
+ID Médico: 3
+ID Sala: 3
+É retorno: 1
+
+Dia: 1, Hora: 10
+ID: 3
+ID Entrada: 4
+Prioridade: 100
+ID Paciente: 5
+ID Médico: 5
+ID Sala: 1
+É retorno: 0
+
+Dia: 1, Hora: 11
+ID: 3
+ID Entrada: 4
+Prioridade: 52
+ID Paciente: 5
+ID Médico: 5
+ID Sala: 1
+É retorno: 1
+
+Dia: 1, Hora: 12
+ID: 4
+ID Entrada: 5
+Prioridade: 51
+ID Paciente: 6
+ID Médico: 5
+ID Sala: 1
+É retorno: 1
+
+Dia: 1, Hora: 13
+ID: 2
+ID Entrada: 3
+Prioridade: 51
+ID Paciente: 4
+ID Médico: 5
+ID Sala: 1
+É retorno: 1
+
+Dia: 1, Hora: 14
+ID: 1
+ID Entrada: 2
+Prioridade: 50
+ID Paciente: 3
+ID Médico: 5
+ID Sala: 1
+É retorno: 0
+
+Dia: 1, Hora: 15
+ID: 1
+ID Entrada: 2
+Prioridade: 51
+ID Paciente: 3
+ID Médico: 5
+ID Sala: 1
+É retorno: 1
+
+Horas trabalhadas por cada médico em ordem não-crescente:
+Médico: felipe, Horas Trabalhadas: 8
+Médico: jose, Horas Trabalhadas: 2
+Médico: joão, Horas Trabalhadas: 2
+Médico: carlos, Horas Trabalhadas: 0
