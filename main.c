@@ -85,7 +85,7 @@ void inserirHeap(struct Heap *heap, struct HeapNode node)
   // Incrementa o tamanho do heap
   heap->tamanho++;
 
-  // Enquanto o nó não for a raiz e a prioridade do nó pai for menor que a do nó atual
+  // Enquanto o nó não for a raiz e a prioridade do nó pai for menor que a do nó atual (promoção)
   while (i != 0 && heap->node[(i - 1) / 2].prioridade < heap->node[i].prioridade)
   {
     // Troca o nó atual com o nó pai
@@ -97,29 +97,6 @@ void inserirHeap(struct Heap *heap, struct HeapNode node)
   }
 }
 
-void construirHeap(struct Heap *heap, struct Entrada entradas[], int num_entradas, struct Medico medicos[], int num_medicos)
-{
-  // Loop para iterar sobre todas as entradas fornecidas
-  for (int i = 0; i < num_entradas; i++)
-  {
-    // Declaração de um novo nó do heap
-    struct HeapNode node;
-    
-    // Inicialização dos campos do nó
-    node.id = i; // ID do nó é o índice atual do loop
-    node.id_entrada = entradas[i].id; // ID da entrada
-    node.prioridade = entradas[i].prioridade; // Prioridade da entrada
-    node.id_paciente = entradas[i].id_paciente; // ID do paciente associado à entrada
-    node.idx_medico = -1; // Inicialmente sem médico associado
-    node.id_sala = -1;    // Inicialmente sem sala associada
-    node.is_retorno = 0;  // Inicialmente não é um retorno
-    node.ja_faltou = 0;   // Inicialmente o paciente não faltou
-    
-    // Inserção do nó no heap
-    inserirHeap(heap, node);
-  }
-}
-
 int removerHeap(struct Heap *heap, struct Saida saidas[], int *num_saidas, struct Medico medicos[], int num_medicos, int salas[][2], struct Entrada entradas[], int *medicos_ocupados, FILE *output_file)
 {
   // Verifica se o heap está vazio se tiver retorna -1
@@ -128,7 +105,7 @@ int removerHeap(struct Heap *heap, struct Saida saidas[], int *num_saidas, struc
     return -1;
   }
 
-  // Remove a raiz do heap e armazena suas informações em uma estrutura de saída
+  // Salva a raiz do heap e armazena suas informações em uma estrutura de saída
   struct HeapNode root = heap->node[0];
   struct Saida saida;
   saida.id = root.id;
@@ -182,7 +159,7 @@ int removerHeap(struct Heap *heap, struct Saida saidas[], int *num_saidas, struc
   heap->node[0] = heap->node[heap->tamanho - 1];
   heap->tamanho--;
 
-  // Reorganiza o heap para manter a propriedade de heap
+  // Reorganiza o heap para manter a propriedade de heap (rebaixamento)
   int i = 0;
   while (i * 2 + 1 < heap->tamanho)
   {
@@ -225,9 +202,9 @@ int removerHeap(struct Heap *heap, struct Saida saidas[], int *num_saidas, struc
   {
     root.is_retorno = 1;
     root.idx_medico = medidx;
-    if (heap->tamanho > 80)
+    if (heap->tamanho > 100)
     {
-      root.prioridade = heap->node[80].prioridade;
+      root.prioridade = heap->node[100].prioridade;
     }
     else
     {
